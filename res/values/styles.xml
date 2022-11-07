@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="TextAppearance.FaceErrorText" parent="@android:style/TextAppearance.Material.Body1">
+        <item name="android:textColor">?android:attr/colorError</item>
+    </style>
+
+    <style name="SetupWizardPartnerResource">
+        <item name="sucUsePartnerResource">@bool/config_suc_use_partner_resource</item>
+        <item name="sudUsePartnerHeavyTheme">true</item>
+    </style>
+</resources>
