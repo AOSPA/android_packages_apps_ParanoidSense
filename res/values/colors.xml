@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidprv="http://schemas.android.com/apk/prv/res/android">
+
+    <color name="theme_background">@androidprv:color/background_device_default_light</color>
+    <color name="theme_background_dark">@androidprv:color/background_device_default_dark</color>
+    <color name="theme_primary">@androidprv:color/primary_device_default_settings_light</color>
+    <color name="theme_primary_dark">@androidprv:color/primary_dark_device_default_settings_light</color>
+    <color name="theme_secondary">@androidprv:color/secondary_device_default_settings_light</color>
+    <color name="theme_accent">@androidprv:color/accent_device_default_light</color>
+    <color name="theme_accent_primary">@androidprv:color/accent_primary_device_default</color>
+    <color name="theme_accent_secondary">@androidprv:color/accent_secondary_device_default</color>
+    <color name="theme_accent_tertiary">@androidprv:color/accent_tertiary_device_default</color>
+    <color name="theme_accent_primary_variant">@androidprv:color/accent_primary_variant_light_device_default</color>
+    <color name="theme_accent_secondary_variant">@androidprv:color/accent_secondary_variant_light_device_default</color>
+    <color name="theme_accent_tertiary_variant">@androidprv:color/accent_tertiary_variant_light_device_default</color>
+    <color name="theme_dark_primary">@androidprv:color/primary_device_default_settings</color>
+    <color name="theme_dark_primary_dark">@androidprv:color/primary_dark_device_default_settings</color>
+    <color name="theme_dark_secondary">@androidprv:color/secondary_device_default_settings</color>
+    <color name="theme_accent_dark">@androidprv:color/accent_device_default_dark</color>
+    <color name="theme_accent_primary_variant_dark">@androidprv:color/accent_primary_variant_dark_device_default</color>
+    <color name="theme_accent_secondary_variant_dark">@androidprv:color/accent_secondary_variant_dark_device_default</color>
+    <color name="theme_accent_tertiary_variant_dark">@androidprv:color/accent_tertiary_variant_dark_device_default</color>
+
+    <color name="theme_accent_200">@androidprv:color/system_accent1_200</color>
+    <color name="theme_accent_300">@androidprv:color/system_accent1_300</color>
+    <color name="theme_accent_400">@androidprv:color/system_accent1_400</color>
+    <color name="theme_accent_500">@androidprv:color/system_accent1_500</color>
+    <color name="theme_accent_700">@androidprv:color/system_accent1_700</color>
+
+    <color name="face_enroll_vendor_color">@*android:color/Red_700</color>
+    <color name="face_enroll_progress_background">@*android:color/Red_700</color>
+</resources>
