@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Face unlock</string>
+    <string name="app_name">Paranoid Sense</string>
 
     <!-- Enroll activity -->
     <string name="face_enroll_title">Center your face in the camera</string>
