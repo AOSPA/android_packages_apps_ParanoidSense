@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "298dd1e1_600c22a0",
+        "filename": "res/values-pt/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000580
+      },
+      "writtenOn": "2023-06-06T17:56:45Z",
+      "side": 1,
+      "message": "\"está obscurecendo seu rosto\" looks a bit strange, no? also, i guess it\u0027s \"estar\" instead of está",
+      "revId": "bfa3de9fd8c0e0189d4e868084ca970a60f81ddc",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
