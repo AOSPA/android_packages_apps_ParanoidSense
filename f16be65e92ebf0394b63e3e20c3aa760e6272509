@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "025762fc_ceac4ac1",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000509
+      },
+      "writtenOn": "2023-06-06T16:24:04Z",
+      "side": 1,
+      "message": "Maybe copyright ?\nAlso needed for original strings.xml",
+      "revId": "f16be65e92ebf0394b63e3e20c3aa760e6272509",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bed4952_b84ebb4e",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000509
+      },
+      "writtenOn": "2023-06-06T16:24:04Z",
+      "side": 1,
+      "message": "Remove dot",
+      "range": {
+        "startLine": 6,
+        "startChar": 69,
+        "endLine": 6,
+        "endChar": 70
+      },
+      "revId": "f16be65e92ebf0394b63e3e20c3aa760e6272509",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd197592_883c4007",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000509
+      },
+      "writtenOn": "2023-06-06T16:24:04Z",
+      "side": 1,
+      "message": "Remove dot",
+      "range": {
+        "startLine": 7,
+        "startChar": 113,
+        "endLine": 7,
+        "endChar": 114
+      },
+      "revId": "f16be65e92ebf0394b63e3e20c3aa760e6272509",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfebeb80_6eeb350e",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000509
+      },
+      "writtenOn": "2023-06-06T16:24:04Z",
+      "side": 1,
+      "message": "\"удалось\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 43,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "f16be65e92ebf0394b63e3e20c3aa760e6272509",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7e5b3e5_1fdabcf6",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000509
+      },
+      "writtenOn": "2023-06-06T16:24:04Z",
+      "side": 1,
+      "message": "\"Убедитесь,\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 97,
+        "endLine": 11,
+        "endChar": 122
+      },
+      "revId": "f16be65e92ebf0394b63e3e20c3aa760e6272509",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6a5623e_278d30c9",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000509
+      },
+      "writtenOn": "2023-06-06T16:24:04Z",
+      "side": 1,
+      "message": "Remove dot",
+      "range": {
+        "startLine": 11,
+        "startChar": 198,
+        "endLine": 11,
+        "endChar": 199
+      },
+      "revId": "f16be65e92ebf0394b63e3e20c3aa760e6272509",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "228f0cf9_38227746",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000509
+      },
+      "writtenOn": "2023-06-06T16:24:04Z",
+      "side": 1,
+      "message": "Isn\u0027t that a button? Like a \"Попробовать ещё раз\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 33,
+        "endLine": 12,
+        "endChar": 50
+      },
+      "revId": "f16be65e92ebf0394b63e3e20c3aa760e6272509",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0d9f8be_4994149f",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000509
+      },
+      "writtenOn": "2023-06-06T16:24:04Z",
+      "side": 1,
+      "message": "\"Недостаточная освещённость лица\"\n\nThe face doesn\u0027t need anything xd",
+      "range": {
+        "startLine": 15,
+        "startChar": 35,
+        "endLine": 15,
+        "endChar": 58
+      },
+      "revId": "f16be65e92ebf0394b63e3e20c3aa760e6272509",
+      "serverId": "3162e3d8-d894-470e-abd9-724f7b0effad"
+    }
+  ]
+}
