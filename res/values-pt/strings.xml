@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Enroll activity -->
+    <string name="face_enroll_title">Centralize seu rosto na câmera</string>
+    <string name="face_enroll_description">Fique parado e certifique-se de estar em um ambiente bem iluminado</string>
+
+    <!-- Try Again activity -->
+    <string name="face_try_again_title">Não foi possível capturar seu rosto</string>
+    <string name="face_try_again_description">Toque abaixo para tentar novamente. Da próxima vez, certifique-se de estar em um ambiente bem iluminado e nada estar obstruindo seu rosto</string>
+    <string name="btn_try_again">Tentar novamente</string>
+
+    <!-- Vendor Messages -->
+    <string name="attr_light_dark">Rosto com pouca iluminação</string>
+    <string name="attr_light_high">Rosto com iluminação em excesso</string>
+    <string name="attr_light_shadow">Rosto com muita sombra</string>
+    <string name="unlock_failed_face_blur">Rosto muito embaçado</string>
+    <string name="unlock_failed_face_large">Rosto muito próximo</string>
+    <string name="unlock_failed_face_multi">Muitos rostos detectados</string>
+    <string name="unlock_failed_face_not_complete">Rosto parcialmente detectado</string>
+    <string name="unlock_failed_face_small">Rosto muito longe</string>
+</resources>
