@@ -28,6 +28,6 @@
     <color name="theme_accent_500">@androidprv:color/system_accent1_500</color>
     <color name="theme_accent_700">@androidprv:color/system_accent1_700</color>
 
-    <color name="face_enroll_vendor_color">@*android:color/Red_700</color>
-    <color name="face_enroll_progress_background">@*android:color/Red_700</color>
+    <color name="face_enroll_vendor_color">@*android:color/system_error_light</color>
+    <color name="face_enroll_progress_background">@*android:color/system_error_light</color>
 </resources>
