@@ -260,12 +260,12 @@ class SenseService : Service() {
         mIdleTimeoutIntent = PendingIntent.getBroadcast(
             applicationContext, 0, Intent(
                 ALARM_TIMEOUT_FREEZED
-            ), PendingIntent.FLAG_MUTABLE
+            ), PendingIntent.FLAG_IMMUTABLE
         )
         mLockoutTimeoutIntent = PendingIntent.getBroadcast(
             applicationContext, 0, Intent(
                 ALARM_FAIL_TIMEOUT_LOCKOUT
-            ), PendingIntent.FLAG_MUTABLE
+            ), PendingIntent.FLAG_IMMUTABLE
         )
         val intentFilter = IntentFilter()
         intentFilter.addAction(ALARM_TIMEOUT_FREEZED)
