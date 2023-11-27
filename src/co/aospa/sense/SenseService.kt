@@ -273,7 +273,7 @@ class SenseService : Service() {
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF)
         intentFilter.addAction(Intent.ACTION_USER_PRESENT)
         intentFilter.priority = IntentFilter.SYSTEM_HIGH_PRIORITY
-        registerReceiver(mReceiver, intentFilter)
+        registerReceiver(mReceiver, intentFilter, Context.RECEIVER_NOT_EXPORTED)
         if (Util.IS_DEBUG_LOGGING) {
             Log.d(TAG, "OnCreate end")
         }
