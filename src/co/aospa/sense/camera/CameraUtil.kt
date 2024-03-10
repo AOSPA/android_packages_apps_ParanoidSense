@@ -40,9 +40,9 @@ object CameraUtil {
             var cameraId: String
             var orientation: Int
             var characteristics: CameraCharacteristics
-            for (i in cameraManager.cameraIdList.indices) {
-                cameraId = cameraManager.cameraIdList[i]
-                characteristics = cameraManager.getCameraCharacteristics(cameraId)
+            for (i in cameraManager!!.cameraIdList.indices) {
+                cameraId = cameraManager!!.cameraIdList[i]
+                characteristics = cameraManager!!.getCameraCharacteristics(cameraId)
                 orientation = characteristics.get(CameraCharacteristics.LENS_FACING)!!
                 if (orientation == CameraCharacteristics.LENS_FACING_FRONT) {
                     return cameraId.toInt()
