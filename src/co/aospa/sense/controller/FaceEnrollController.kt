@@ -258,8 +258,8 @@ open class FaceEnrollController private constructor(private val mContext: Contex
         get() {
             val cameraInfo = Camera.CameraInfo()
             Camera.getCameraInfo(mCameraId, cameraInfo)
-            val rotation =
-                mContext!!.getSystemService(WindowManager::class.java).defaultDisplay.rotation
+            val rotation: Int =
+                (mContext!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.rotation
             var orientation = 0
             if (rotation != 0) {
                 when (rotation) {

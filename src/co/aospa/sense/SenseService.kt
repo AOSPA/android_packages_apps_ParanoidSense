@@ -341,24 +341,24 @@ class SenseService : Service() {
     private fun startIdleTimer() {
         mOnIdleTimer = true
         mAlarmManager!![AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime() + DEFAULT_IDLE_TIMEOUT_MS] =
-            mIdleTimeoutIntent
+            mIdleTimeoutIntent!!
     }
 
     private fun cancelIdleTimer() {
         mOnIdleTimer = false
-        mAlarmManager!!.cancel(mIdleTimeoutIntent)
+        mAlarmManager!!.cancel(mIdleTimeoutIntent!!)
     }
 
     private fun startLockoutTimer() {
         val elapsedRealtime = SystemClock.elapsedRealtime() + FAIL_LOCKOUT_TIMEOUT_MS
         mOnLockoutTimer = true
         mAlarmManager!![AlarmManager.ELAPSED_REALTIME, elapsedRealtime] =
-            mLockoutTimeoutIntent
+            mLockoutTimeoutIntent!!
     }
 
     private fun cancelLockoutTimer() {
         if (mOnLockoutTimer) {
-            mAlarmManager!!.cancel(mLockoutTimeoutIntent)
+            mAlarmManager!!.cancel(mLockoutTimeoutIntent!!)
             mOnLockoutTimer = false
         }
     }
