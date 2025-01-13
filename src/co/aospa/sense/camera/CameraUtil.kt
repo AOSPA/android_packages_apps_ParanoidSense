@@ -34,9 +34,8 @@ object CameraUtil {
             return cameraIdProp.toInt()
         }
         try {
-            val cameraManager = context!!.getSystemService(
-                CameraManager::class.java
-            )
+            val cameraManager: CameraManager =
+                context!!.getSystemService(Context.CAMERA_SERVICE) as CameraManager
             var cameraId: String
             var orientation: Int
             var characteristics: CameraCharacteristics

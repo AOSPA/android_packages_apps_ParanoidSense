@@ -230,7 +230,7 @@ open class EnrollActivity : FaceBaseActivity() {
     }
 
     override fun getLayout(): GlifLayout {
-        return findViewById(R.id.face_enroll)
+        return findViewById(R.id.face_enroll)!!
     }
 
     override fun onDestroy() {
