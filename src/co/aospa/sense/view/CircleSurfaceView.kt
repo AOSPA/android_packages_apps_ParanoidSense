@@ -14,64 +14,76 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import co.aospa.sense.R
 import kotlin.math.abs
 
-class CircleSurfaceView : SurfaceView {
+class CircleSurfaceView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : SurfaceView(context, attrs, defStyleAttr) {
 
-    private var mProgressAnimator: ValueAnimator? = null
-    private var mProgress = 0.0f
+    private var progressAnimator: ValueAnimator? = null
+    private var currentProgress = 0.0f
 
-    constructor(context: Context?) : super(context) {}
-    constructor(context: Context?, attributeSet: AttributeSet?) : super(context, attributeSet) {}
-    constructor(context: Context?, attributeSet: AttributeSet?, defStyleAttr: Int) : super(
-        context,
-        attributeSet,
-        defStyleAttr
-    ) {
-    }
+    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val circlePath = Path()
+    private val rectF = RectF()
 
     fun setProgress(progress: Float) {
-        if (progress in 0.0f..100.0f) {
-            if (mProgressAnimator != null) {
-                mProgressAnimator!!.cancel()
-                mProgressAnimator = null
-            }
-            mProgressAnimator = ValueAnimator.ofFloat(mProgress, progress)
-            mProgressAnimator?.interpolator = AccelerateDecelerateInterpolator()
-            val duration = abs(1000 * ((progress - mProgress) / 100)).toLong()
-            mProgressAnimator?.duration = duration
-            mProgressAnimator?.addUpdateListener { animation: ValueAnimator ->
-                mProgress = animation.animatedValue as Float
+        if (progress !in 0.0f..100.0f) return
+
+        progressAnimator?.cancel()
+        progressAnimator = ValueAnimator.ofFloat(currentProgress, progress).apply {
+            interpolator = AccelerateDecelerateInterpolator()
+            duration = abs(1000 * ((progress - currentProgress) / 100)).toLong()
+
+            addUpdateListener { animation ->
+                currentProgress = animation.animatedValue as Float
                 invalidate()
             }
-            mProgressAnimator?.addListener(object : AnimatorListenerAdapter() {
+
+            addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
                     super.onAnimationEnd(animation)
-                    mProgressAnimator = null
+                    progressAnimator = null
                 }
             })
-            mProgressAnimator?.start()
+
+            start()
         }
     }
 
     override fun draw(canvas: Canvas) {
-        val measuredWidth = (measuredWidth / 2).toFloat()
-        val measuredHeight = (measuredHeight / 2).toFloat()
-        val min = measuredWidth.coerceAtMost(measuredHeight)
-        val rectF = RectF(
-            measuredWidth - min,
-            measuredHeight - min,
-            measuredWidth + min,
-            measuredHeight + min
+        val centerX = (measuredWidth / 2).toFloat()
+        val centerY = (measuredHeight / 2).toFloat()
+        val radius = minOf(centerX, centerY)
+
+        // Set up drawing area
+        rectF.set(
+            centerX - radius,
+            centerY - radius,
+            centerX + radius,
+            centerY + radius
         )
-        val paint = Paint()
-        paint.isAntiAlias = true
+
+        // Draw background arc
         paint.color = context.getColor(R.color.theme_accent_200)
-        canvas.drawArc(rectF, 270.0f, 360.0f, true, paint)
+        canvas.drawArc(rectF, START_ANGLE, DEGREES_IN_CIRCLE, true, paint)
+
+        // Draw progress arc
         paint.color = context.getColor(R.color.theme_accent_primary)
-        canvas.drawArc(rectF, 270.0f, mProgress * 3.6f, true, paint)
-        val path = Path()
-        path.addCircle(measuredWidth, measuredHeight, min * 0.95f, Path.Direction.CCW)
-        canvas.clipPath(path)
+        canvas.drawArc(rectF, START_ANGLE, currentProgress * PROGRESS_TO_ANGLE_RATIO, true, paint)
+
+        // Create and apply circular clip
+        circlePath.reset()
+        circlePath.addCircle(centerX, centerY, radius * 0.95f, Path.Direction.CCW)
+        canvas.clipPath(circlePath)
+
         super.draw(canvas)
         invalidate()
+    }
+
+    companion object {
+        private const val DEGREES_IN_CIRCLE = 360f
+        private const val PROGRESS_TO_ANGLE_RATIO = DEGREES_IN_CIRCLE / 100f  // 3.6f
+        private const val START_ANGLE = 270f
     }
 }

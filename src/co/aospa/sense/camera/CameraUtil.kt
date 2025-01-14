@@ -16,24 +16,25 @@ object CameraUtil {
         requireNotNull(parameters) { "Camera parameters cannot be null" }
 
         val supportedPreviewSizes = parameters.supportedPreviewSizes
-        val previewSizes = ArrayList<Camera.Size>()
-        for (size in supportedPreviewSizes) {
-            if (size.width > size.height) {
-                previewSizes.add(size)
-            }
+        val previewSizes = ArrayList<Camera.Size>().apply {
+            // Filter for landscape orientations (width > height)
+            supportedPreviewSizes
+                .filter { it.width > it.height }
+                .forEach { add(it) }
         }
-        previewSizes.sortWith(Comparator.comparingInt { size: Camera.Size ->
-            abs(
-                size.width * size.height - width * height
-            )
+
+        // Sort by how close the resolution is to our target
+        previewSizes.sortWith(Comparator.comparingInt { size ->
+            abs(size.width * size.height - width * height)
         })
 
-        return previewSizes.first()
+        return previewSizes.firstOrNull()
+            ?: supportedPreviewSizes.first() // Fallback to first supported size if no landscape sizes
     }
 
     fun getCameraId(context: Context?): Int {
         val cameraIdProp = SystemProperties.get("ro.face.sense_service.camera_id")
-        if (cameraIdProp != null && cameraIdProp != "") {
+        if (cameraIdProp?.isNotBlank() == true) {
             return cameraIdProp.toInt()
         }
 
