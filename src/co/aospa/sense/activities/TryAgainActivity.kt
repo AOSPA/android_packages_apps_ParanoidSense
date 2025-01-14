@@ -41,9 +41,10 @@ class TryAgainActivity : FaceBaseActivity() {
 
     override fun getLayout(): GlifLayout {
         return findViewById(R.id.face_enroll_try_again)
+            ?: throw IllegalStateException("Missing required GlifLayout view with id 'face_enroll_try_again'")
     }
 
-    public override fun onPause() {
+    override fun onPause() {
         super.onPause()
         finish()
     }

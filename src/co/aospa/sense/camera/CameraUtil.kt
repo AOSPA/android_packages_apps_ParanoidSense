@@ -33,17 +33,15 @@ object CameraUtil {
         if (cameraIdProp != null && cameraIdProp != "") {
             return cameraIdProp.toInt()
         }
+
         try {
-            val cameraManager = context!!.getSystemService(
+            val cameraManager = context?.getSystemService(
                 CameraManager::class.java
-            )
-            var cameraId: String
-            var orientation: Int
-            var characteristics: CameraCharacteristics
-            for (i in cameraManager.cameraIdList.indices) {
-                cameraId = cameraManager.cameraIdList[i]
-                characteristics = cameraManager.getCameraCharacteristics(cameraId)
-                orientation = characteristics.get(CameraCharacteristics.LENS_FACING)!!
+            ) ?: return -1
+
+            cameraManager.cameraIdList?.forEach { cameraId ->
+                val characteristics = cameraManager.getCameraCharacteristics(cameraId)
+                val orientation = characteristics.get(CameraCharacteristics.LENS_FACING)
                 if (orientation == CameraCharacteristics.LENS_FACING_FRONT) {
                     return cameraId.toInt()
                 }
@@ -51,6 +49,7 @@ object CameraUtil {
         } catch (e: CameraAccessException) {
             e.printStackTrace()
         }
+
         return -1
     }
 }
