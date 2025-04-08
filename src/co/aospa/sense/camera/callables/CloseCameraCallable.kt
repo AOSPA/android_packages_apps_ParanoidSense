@@ -9,8 +9,10 @@ class CloseCameraCallable(listener: CameraListener?) : CameraCallable(listener) 
 
     override fun call(): CallableReturn {
         val cameraData = cameraData
-        val camera = cameraData.mCamera
-            ?: return CallableReturn(Exception("Camera isn't opened"))
+        val camera = cameraData.mCamera ?: run {
+            if (Util.IS_DEBUG_LOGGING) Log.d(tag, "camera already closed")
+            return CallableReturn(null)
+        }
         if (Util.IS_DEBUG_LOGGING) Log.d(tag, "releasing camera")
         camera.setErrorCallback(null)
         camera.release()
