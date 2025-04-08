@@ -14,9 +14,11 @@ import com.google.android.setupdesign.util.ThemeHelper
 class TryAgainActivity : FaceBaseActivity() {
 
     override fun onCreate(bundle: Bundle?) {
-        ThemeHelper.applyTheme(this);
-        ThemeHelper.trySetDynamicColor(this);
         super.onCreate(bundle)
+
+        setTheme(ThemeHelper.getSuwDefaultTheme(applicationContext))
+        ThemeHelper.trySetDynamicColor(this)
+
         setContentView(R.layout.face_enroll_try_again)
         setHeaderText(R.string.face_try_again_title)
         getLayout().setDescriptionText(R.string.face_try_again_description)
@@ -27,7 +29,7 @@ class TryAgainActivity : FaceBaseActivity() {
                 .setText(R.string.btn_try_again)
                 .setListener { setTryAgainButton() }
                 .setButtonType(FooterButton.ButtonType.OTHER)
-                .setTheme(R.style.SudGlifButton_Primary)
+                .setTheme(com.google.android.setupdesign.R.style.SudGlifButton_Primary)
                 .build()
         if (mToken == null) {
             footerBarMixin.primaryButton.visibility = View.INVISIBLE

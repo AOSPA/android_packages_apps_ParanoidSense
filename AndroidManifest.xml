@@ -29,14 +29,14 @@
             android:excludeFromRecents="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"
-            android:theme="@style/SudThemeGlifV4" />
+            android:theme="@style/SudThemeGlifV4.DayNight" />
 
         <activity
             android:name=".activities.TryAgainActivity"
             android:excludeFromRecents="true"
             android:launchMode="standard"
             android:screenOrientation="portrait"
-            android:theme="@style/SudThemeGlifV4" />
+            android:theme="@style/SudThemeGlifV4.DayNight" />
 
         <service
             android:name=".SenseService"

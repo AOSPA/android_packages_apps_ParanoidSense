@@ -4,12 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.TextView
-import androidx.fragment.app.FragmentActivity
+import androidx.appcompat.app.AppCompatActivity
 import co.aospa.sense.R
 import co.aospa.sense.util.Constants
 import com.google.android.setupdesign.GlifLayout
+import com.google.android.setupdesign.util.ThemeHelper
 
-abstract class FaceBaseActivity : FragmentActivity() {
+abstract class FaceBaseActivity : AppCompatActivity() {
 
     private var mLaunchedConfirmLock = false
     @JvmField
@@ -18,7 +19,10 @@ abstract class FaceBaseActivity : FragmentActivity() {
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        setTheme(R.style.SudThemeGlifV4)
+
+        setTheme(ThemeHelper.getSuwDefaultTheme(applicationContext))
+        ThemeHelper.trySetDynamicColor(this)
+
         mToken = intent.getByteArrayExtra(Constants.EXTRA_KEY_CHALLENGE_TOKEN)
         if (bundle != null && mToken == null) {
             mLaunchedConfirmLock = bundle.getBoolean(Constants.EXTRA_KEY_LAUNCHED_CONFIRM)

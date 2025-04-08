@@ -163,9 +163,11 @@ open class EnrollActivity : FaceBaseActivity() {
         }
 
     override fun onCreate(bundle: Bundle?) {
-        ThemeHelper.applyTheme(this)
-        ThemeHelper.trySetDynamicColor(this)
         super.onCreate(bundle)
+
+        setTheme(ThemeHelper.getSuwDefaultTheme(applicationContext))
+        ThemeHelper.trySetDynamicColor(this)
+
         mPreferenceHelper = PreferenceHelper(this)
         mHasCameraPermission = false
         mFaceManager = getSystemService(FaceManager::class.java)
