@@ -171,7 +171,9 @@ open class FaceAuthenticationController(
                     if (mTexture == null) {
                         mTexture = SurfaceTexture(10)
                     }
-                    CameraService.addCallbackBuffer(mFrame!!.array(), null)
+                    mFrame?.let {
+                        CameraService.addCallbackBuffer(it.array(), null)
+                    }
                     CameraService.setPreviewCallback(mByteBufferListener, true, null)
                     CameraService.startPreview(mTexture, mCameraListener)
                 }
