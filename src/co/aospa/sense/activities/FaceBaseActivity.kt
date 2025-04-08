@@ -18,7 +18,7 @@ abstract class FaceBaseActivity : FragmentActivity() {
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        setTheme(R.style.SudThemeGlifV4)
+        setTheme(R.style.GlifV4Theme_DayNight)
         mToken = intent.getByteArrayExtra(Constants.EXTRA_KEY_CHALLENGE_TOKEN)
         if (bundle != null && mToken == null) {
             mLaunchedConfirmLock = bundle.getBoolean(Constants.EXTRA_KEY_LAUNCHED_CONFIRM)

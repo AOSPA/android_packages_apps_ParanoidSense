@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.setupdesign.GlifLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:icon="@drawable/ic_face_header"
+    android:icon="@drawable/ic_lock"
     android:id="@+id/face_enroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -55,7 +55,7 @@
                         android:layout_marginTop="12dp"
                         android:lines="3"
                         android:accessibilityLiveRegion="polite"
-                        style="@style/TextAppearance.FaceErrorText"/>
+                        style="@style/TextAppearance.ErrorText"/>
                 </FrameLayout>
             </LinearLayout>
         </LinearLayout>
